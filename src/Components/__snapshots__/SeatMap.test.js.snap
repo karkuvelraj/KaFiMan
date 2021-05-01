@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering SearMap For Admin 1`] = `ShallowWrapper {}`;
+
+exports[`rendering SearMap in InFlight 1`] = `ShallowWrapper {}`;
+
+exports[`rendering SearMap in checkIn 1`] = `ShallowWrapper {}`;

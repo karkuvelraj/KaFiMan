@@ -1,0 +1,340 @@
+$primaryBtn: rgb(73, 73, 255);
+$secondaryBtn: #0dc70dd1;
+$redBtn: rgb(250, 78, 78);
+$primaryBtnH: rgb(183, 183, 255);
+$secondaryBtnH: rgb(170, 240, 170);
+$redBtnH: rgb(252, 161, 161);
+$colorBack: rgb(46, 46, 46);
+$colorFront: black;
+$colorItems: green;
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500&display=swap");
+@import url("./fb.scss");
+@import url("./formstyle.scss");
+// @import url("./nav.scss");
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  box-shadow: -1px 5px 10px 1px rgba(149, 250, 128, 0.49);
+}
+@mixin fullsize() {
+  width: 100%;
+  height: 100%;
+  padding: 2%;
+}
+
+body {
+  font-family: "Archivo Narrow", sans-serif;
+  color: rgb(241, 11, 11);
+}
+#root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+button {
+  cursor: pointer;
+  font-family: "Archivo Narrow", sans-serif;
+  //   border-radius: 10px;
+  font-weight: 600;
+  height: 90%;
+  width: 60px;
+  color: white;
+}
+.outer {
+  @include flex(column);
+  // align-items: stretch;
+  justify-content: end;
+  align-items: center;
+  height: 100%;
+  // overflow: scroll;
+}
+.top {
+  background-color: $colorBack;
+  height: 40px;
+  position: sticky;
+  width: 100%;
+  @include flex(row);
+  justify-content: space-between;
+  img {
+    width: 100px;
+    height: 100%;
+    cursor: pointer;
+  }
+  button {
+    height: 100%;
+  }
+}
+.middle {
+  @include flex(column);
+  justify-content: center;
+  box-shadow: none;
+  // height: 100%;
+  // min-height: 100%;
+  height: 200%;
+}
+.login {
+  @include flex(column);
+  width: 30%;
+  margin: auto;
+  height: 70%;
+  background: linear-gradient(
+    to right,
+    #4c4c4c 0%,
+    #595959 12%,
+    #666666 25%,
+    #474747 39%,
+    #2b2b2b 76%,
+    #1c1c1c 91%,
+    #131313 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.m-right {
+  @include flex(row);
+  width: 90%;
+  height: 96%;
+  background-color: antiquewhite;
+  .options {
+    background-color: black;
+    border: black solid;
+    color: greenyellow;
+    cursor: pointer;
+    width: 30%;
+    height: 50%;
+    font-size: 30px;
+    text-align: center;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.616);
+    }
+  }
+  img {
+    width: 100%;
+    height: 80%;
+  }
+}
+.F-parent {
+  @include flex(column);
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: scroll;
+  @include fullsize();
+  .F-content {
+    @include flex(row);
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #cecfd5;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 150%;
+    box-shadow: -1px 5px 10px 1px black;
+    padding: 1% !important;
+    .F-passengers {
+      margin-top: 10px;
+      width: 60%;
+      height: 500px !important;
+    }
+  }
+}
+.passengerList {
+  height: 430px;
+  overflow: auto;
+  box-sizing: border-box;
+
+  align-items: center;
+  background-color: ghostwhite;
+}
+.outertable {
+  border-collapse: collapse;
+  border: 2px solid #323233;
+  color: darkslategray;
+  text-align: center;
+  margin: 10px auto;
+  width: 95%;
+
+  th,
+  td {
+    border: 1px solid #cecfd5;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  thead {
+    border: 2px solid #323233;
+    background-color: #d0f9d3;
+  }
+}
+.innertable {
+  width: 95%;
+}
+.F-filter {
+  width: 100%;
+  padding: 0;
+  background-color: #d0f9d3;
+  padding: 1%;
+  box-sizing: border-box;
+  box-shadow: -1px 5px 10px 1px black;
+}
+.searchResults {
+  // width: 83%;
+  position: relative;
+  background-color: whitesmoke;
+  padding: 1%;
+  box-sizing: border-box;
+  .outertable > tbody > tr {
+    &:hover {
+      background-color: rgba(236, 9, 9, 0.418);
+    }
+  }
+}
+.filter {
+  display: flex;
+  justify-content: space-between;
+  background-color: #d0f9d3;
+  padding-left: 2%;
+}
+.a-passengers {
+  width: 50%;
+}
+
+.F-detail {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  padding: 2%;
+}
+.flightDetails {
+  padding: 2%;
+  max-height: 30%;
+  overflow: auto;
+  padding: 0px;
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  width: 100%;
+  box-shadow: -1px 5px 10px 1px black;
+}
+.seat {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: #0000ff52;
+  color: black;
+  &:hover {
+    width: 110px;
+    height: 110px;
+    background-color: #0000ffc9;
+  }
+  p,
+  button {
+    margin: auto 10px;
+  }
+}
+.homepage {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  width: 90%;
+  height: 90%;
+  padding: 2%;
+  margin: auto 0px;
+}
+.welcome {
+  font-size: x-large;
+  font-style: italic;
+  background-color: #d0f9d3;
+  border-radius: 20px;
+  padding-left: 30px;
+}
+.counts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 70%;
+  div {
+    width: 40%;
+    height: 80%;
+    background-color: #d0f9d3;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    &:hover {
+      background-color: #61ee6b;
+    }
+  }
+}
+.heading {
+  display: block;
+  background-color: #d0f9d3;
+  text-align: center;
+  padding: 10px;
+  color: black;
+  font-size: 19px;
+}
+.passengerHead {
+  background-color: #d0f9d3;
+}
+.checkedin {
+  background-color: #00804b87;
+  &:hover {
+    background-color: #2be0956b;
+  }
+}
+.empty {
+  background-color: #80000052;
+  &:hover {
+    background-color: #ee0b0b52;
+  }
+}
+.F-map {
+  width: 50%;
+  max-height: 400px;
+  min-height: 500px;
+  margin-top: 10px;
+  overflow: auto;
+  border: 1px solid #cecfd5;
+  .head {
+    background-color: #d0f9d3;
+  }
+  .first {
+    @include flex(row);
+    background-color: whitesmoke;
+    flex-wrap: wrap;
+  }
+}
+.seatNo {
+  color: rgb(112, 5, 5);
+  padding-left: 10px;
+}
+@mixin btn($org, $hvr) {
+  background-color: $org;
+  border: 1px solid $org;
+  &:hover {
+    color: $org;
+    background-color: $hvr;
+  }
+}
+.p-btn {
+  @include btn($primaryBtn, $primaryBtnH);
+}
+.s-btn {
+  @include btn($secondaryBtn, $secondaryBtnH);
+}
+.r-btn {
+  @include btn($redBtn, $redBtnH);
+}
+.navigator {
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  span {
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
